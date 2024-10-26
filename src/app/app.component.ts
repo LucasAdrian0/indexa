@@ -6,6 +6,15 @@ import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component'
 import { SeparadorComponent } from './componentes/separador/separador.component';
 import { ContatoComponent } from './componentes/contato/contato.component';
 
+//interface que representa um contato
+interface Contato {
+  id: number
+  nome: string
+  telefone: string
+}
+//importado json e corrigido erro em tsconfig.json
+import agenda from './agenda.json'
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -22,5 +31,5 @@ import { ContatoComponent } from './componentes/contato/contato.component';
 })
 export class AppComponent {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz'
-  title: any;
+  contatos: Contato[] = agenda
 }
