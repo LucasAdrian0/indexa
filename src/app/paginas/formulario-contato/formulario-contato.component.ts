@@ -35,12 +35,9 @@ export class FormularioContatoComponent{//importar todas as ferramentes relevant
 
     })
   }
-  //medoto criado salvar contato, nome deve ser igual ao (ngSubmit) colocado no aruivo html
+  //medoto criado salvar contato, nome deve ser igual ao (ngSubmit) colocado no arquivo html
   salvarContato(){
-    if(!this.contatoForm.valid){
       console.log(this.contatoForm.value);
-      console.log(this.contatoForm.get('email')?.errors);
-    }
   }
   //metodo para cancelar
   cancelar(){
