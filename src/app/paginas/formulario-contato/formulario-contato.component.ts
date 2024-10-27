@@ -37,8 +37,9 @@ export class FormularioContatoComponent{//importar todas as ferramentes relevant
   }
   //medoto criado salvar contato, nome deve ser igual ao (ngSubmit) colocado no aruivo html
   salvarContato(){
-    if(this.contatoForm.valid){
+    if(!this.contatoForm.valid){
       console.log(this.contatoForm.value);
+      console.log(this.contatoForm.get('email')?.errors);
     }
   }
   //metodo para cancelar

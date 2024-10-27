@@ -15,7 +15,8 @@
         <input type="text" id="nome" placeholder="Digite o nome do contato"
             formControlName="nome"><!--no formControlName usar o mesmo nome que foi colocado no construtor para sincronizar os campos do formulario com o formgroup criado no ts-->
         @if (contatoForm.get('nome')?.errors && contatoForm.get('nome')?.touched )
-        {<!--se o campo nome não for preenchido e ja foi tocado então erro-->
+        {<!--se o campo nome não for preenchido e ja foi tocado então erro, 
+        ? é operador de navegação segura, serve caso o campo não exista-->
         <div class="mensagem-erro">Campo obrigatório</div>
         }
 
@@ -28,9 +29,13 @@
 
         <label for="email">E-mail</label>
         <input type="text" id="email" placeholder="Digite o e-mail do contato" formControlName="email">
-        @if (contatoForm.get('email')?.errors && contatoForm.get('email')?.touched )
+        @if (contatoForm.get('email')?.errors?.['required'] && contatoForm.get('email')?.touched )
         {
         <div class="mensagem-erro">Campo obrigatório</div>
+        }
+        @if (contatoForm.get('email')?.errors?.['email'] && contatoForm.get('email')?.touched )
+        {
+        <div class="mensagem-erro">Formato de email inválido</div>
         }
 
         <app-separador></app-separador>
