@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 
 @Component({
@@ -26,10 +26,10 @@ export class FormularioContatoComponent{//importar todas as ferramentes relevant
   constructor(){
     this.contatoForm = new FormGroup({//contatoForm recebe um grupo de formulario
       //aqui devo escrever todos os campos do formulario
-      nome: new FormControl(''), //formcontrol fala que nome recebe campo de controle, dentro do parenteses pode passar um valor inicialou não, neste caso ficou como string vazia
-      telefone: new FormControl('') ,
-      email: new FormControl('') ,
-      aniversario: new FormControl('') ,
+      nome: new FormControl('',Validators.required), //validatos.required verifica se o campoobrigatorio foi preenchido
+      telefone: new FormControl('',Validators.required) ,
+      email: new FormControl('',[Validators.required,Validators.email]) ,
+      aniversario: new FormControl('',Validators.required) ,
       redes: new FormControl(''),
       observacoes: new FormControl('') 
 
@@ -37,9 +37,11 @@ export class FormularioContatoComponent{//importar todas as ferramentes relevant
   }
   //medoto criado salvar contato, nome deve ser igual ao (ngSubmit) colocado no aruivo html
   salvarContato(){
-    console.log(this.contatoForm.value);
+    if(this.contatoForm.valid){
+      console.log(this.contatoForm.value);
+    }
   }
-
+  //metodo para cancelar
   cancelar(){
     console.log('Submissao cancelada');
   }
