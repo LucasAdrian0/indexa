@@ -1,3 +1,4 @@
+//importar todas as ferramentes relevantes para formulario, sempre vericar as telas de erros para fazer correções
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContainerComponent } from '../../componentes/container/container.component';
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-formulario-contato',
   standalone: true,
-  imports: [
+  imports: [//importar todos componentes que for utilizar em formularios
     CommonModule,
     ContainerComponent,
     SeparadorComponent,
@@ -17,7 +18,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './formulario-contato.component.html',
   styleUrl: './formulario-contato.component.css'
 })
-export class FormularioContatoComponent {
+export class FormularioContatoComponent{//importar todas as ferramentes relevantes para formulario, sempre vericar as telas de erros para fazer correçõesFormularioContatoComponent {
   //declarar uma propriedade que vai representar o formulario
   contatoForm!/*! representa operador não nula */: FormGroup;//formgroup é uma ferramenta para trabalhar com formulário, vai apresentar erro pq ela não foi inicializada, deve inicializar ela dentro do construtor no tipescript
 
