@@ -9,37 +9,44 @@
         </section>
     </header>
 
-    <form [formGroup]="contatoForm"><!--formGroup coloca o nome do form friado no arquivo ts para sincronizar o formulario com o objeto-->
+    <form [formGroup]="contatoForm" (ngSubmit)="salvarContato()">
+        <!--formGroup coloca o nome do form friado no arquivo ts para sincronizar o formulario com o objeto-->
         <label for="nome">Nome</label>
-        <input type="text" id="nome" placeholder="Digite o nome do contato" formControlName="nome"><!--no controlname usaro mesmo nome que foi colocado no construtor para  sincronizar os campos do formulario com oformgroupo criado no ts-->
+        <input type="text" id="nome" placeholder="Digite o nome do contato"
+            formControlName="nome"><!--no controlname usaro mesmo nome que foi colocado no construtor para  sincronizar os campos do formulario com oformgroupo criado no ts-->
 
         <label for="telefone">Telefone</label>
-        <input type="text" id="telefone" placeholder="Digite o telefone do contato" formControlName="telefone"><!--no controlname usaro mesmo nome que foi colocado no construtor para sincronizar os campos do formulario com o formgroup criado no ts-->
+        <input type="text" id="telefone" placeholder="Digite o telefone do contato"
+            formControlName="telefone"><!--no controlname usaro mesmo nome que foi colocado no construtor para sincronizar os campos do formulario com o formgroup criado no ts-->
 
         <label for="email">E-mail</label>
-        <input type="text" id="email" placeholder="Digite o e-mail do contato" formControlName="email"><!--no controlname usaro mesmo nome que foi colocado no construtor para sincronizar os campos do formulario com o formgroup criado no ts-->
+        <input type="text" id="email" placeholder="Digite o e-mail do contato"
+            formControlName="email"><!--no controlname usaro mesmo nome que foi colocado no construtor para sincronizar os campos do formulario com o formgroup criado no ts-->
 
         <app-separador></app-separador>
 
         <label for="aniversario">Aniversario</label>
-        <input type="text" id="aniversario" placeholder="Data de nascimento" formControlName="aniversario"><!--no controlname usaro mesmo nome que foi colocado no construtor para sincronizar os campos do formulario com o formgroup criado no ts-->
+        <input type="date" id="aniversario" placeholder="Data de nascimento"
+            formControlName="aniversario"><!--no controlname usaro mesmo nome que foi colocado no construtor para sincronizar os campos do formulario com o formgroup criado no ts-->
 
         <label for="redes">Redes Sociais</label>
         <div class="input-container">
             <span class="span-http">http://</span>
-            <input type="url" id="redes" placeholder="Adicione a URL da página" formControlName="redes"><!--no controlname usaro mesmo nome que foi colocado no construtor para sincronizar os campos do formulario com o formgroup criado no ts-->            
+            <input type="url" id="redes" placeholder="Adicione a URL da página"
+                formControlName="redes"><!--no controlname usaro mesmo nome que foi colocado no construtor para sincronizar os campos do formulario com o formgroup criado no ts-->
         </div>
 
         <label for="observacao">Observação</label>
-        <textarea
-            type="text" id="observacao" placeholder="Coloque obseravções nesse espaço. Exemplo: Instrutora da academia Nova imagem, amiga da Julia" formControlName="observacoes"><!--no controlname usaro mesmo nome que foi colocado no construtor para sincronizar os campos do formulario com o formgroup criado no ts-->
+        <textarea type="text" id="observacao"
+            placeholder="Coloque obseravções nesse espaço. Exemplo: Instrutora da academia Nova imagem, amiga da Julia"
+            formControlName="observacoes"><!--no controlname usaro mesmo nome que foi colocado no construtor para sincronizar os campos do formulario com o formgroup criado no ts-->
         </textarea>
+
+        <Section class="botoes">
+            <button (click)="cancelar()"  class="botao-cancelar" type="button">Cancelar</button>
+            <button class="botao-salvar" type="submit">Salvar contato</button>
+        </Section>
 
     </form>
 
-    <Section class="botoes">
-        <button class="botao-cancelar" type="button">Cancelar</button>
-        <button class="botao-salvar" type="submit">Salvar contato</button>
-    </Section>
-
-</app-container>    
+</app-container>

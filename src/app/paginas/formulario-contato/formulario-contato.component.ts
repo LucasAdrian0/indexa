@@ -26,14 +26,21 @@ export class FormularioContatoComponent{//importar todas as ferramentes relevant
   constructor(){
     this.contatoForm = new FormGroup({//contatoForm recebe um grupo de formulario
       //aqui devo escrever todos os campos do formulario
-      nome: new FormControl('1'), //formcontrol fala que nome recebe campo de controle, dentro do parenteses pode passar um valor inicialou não, neste caso ficou como string vazia
-      telefone: new FormControl('14997995957') ,
-      email: new FormControl('1') ,
-      aniversario: new FormControl('1') ,
-      redes: new FormControl('1'),
-      observacoes: new FormControl('2') 
+      nome: new FormControl(''), //formcontrol fala que nome recebe campo de controle, dentro do parenteses pode passar um valor inicialou não, neste caso ficou como string vazia
+      telefone: new FormControl('') ,
+      email: new FormControl('') ,
+      aniversario: new FormControl('') ,
+      redes: new FormControl(''),
+      observacoes: new FormControl('') 
 
     })
   }
+  //medoto criado salvar contato, nome deve ser igual ao (ngSubmit) colocado no aruivo html
+  salvarContato(){
+    console.log(this.contatoForm.value);
+  }
 
+  cancelar(){
+    console.log('Submissao cancelada');
+  }
 }
