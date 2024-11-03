@@ -16,6 +16,7 @@ interface Contato {
 
 //importado json e corrigido erro em tsconfig.json
 import agenda from '../../agenda.json'
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-lista-contatos',
@@ -27,7 +28,8 @@ import agenda from '../../agenda.json'
     SeparadorComponent,
     ContatoComponent,
     FormsModule,
-    FormularioContatoComponent
+    FormularioContatoComponent,
+    RouterLink
   ],
   templateUrl: './lista-contatos.component.html',
   styleUrl: './lista-contatos.component.css'

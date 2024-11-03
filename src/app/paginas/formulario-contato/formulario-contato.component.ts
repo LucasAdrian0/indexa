@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ListaContatosComponent } from '../lista-contatos/lista-contatos.component';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
@@ -13,7 +15,9 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
     CommonModule,
     ContainerComponent,
     SeparadorComponent,
-    ReactiveFormsModule //utiliza este importe para trabalhar com formulario
+    ReactiveFormsModule, //utiliza este importe para trabalhar com formulario
+    ListaContatosComponent,
+    RouterLink
   ],
   templateUrl: './formulario-contato.component.html',
   styleUrl: './formulario-contato.component.css'
